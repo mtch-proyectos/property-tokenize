@@ -1,0 +1,251 @@
+/**
+ * Catálogo de propiedades (datos estáticos — el sitio es informativo,
+ * no hay conexión a base de datos por el momento).
+ */
+
+export const PROPERTY_TYPES = {
+  coworking: { label: 'Coworking', icon: 'business_center' },
+  residential: { label: 'Residencial', icon: 'apartment' },
+  commercial: { label: 'Comercial', icon: 'storefront' },
+  hotel: { label: 'Hotelero', icon: 'hotel' },
+  logistics: { label: 'Logístico', icon: 'warehouse' },
+};
+
+export const PROPERTY_STATUS = {
+  open: { label: 'En financiamiento', color: 'primary' },
+  almostFunded: { label: 'Últimos tokens', color: 'tertiary' },
+  funded: { label: 'Financiada', color: 'secondary' },
+  comingSoon: { label: 'Próximamente', color: 'outline' },
+};
+
+const unsplash = (id) =>
+  `https://images.unsplash.com/${id}?auto=format&fit=crop&w=1200&q=70`;
+
+export const properties = [
+  {
+    id: 'torre-nexus-coworking',
+    name: 'Torre Nexus Coworking',
+    type: 'coworking',
+    status: 'open',
+    city: 'Ciudad de Panamá',
+    country: 'Panamá',
+    address: 'Calle 50, Obarrio',
+    image: unsplash('photo-1497366216548-37526070297c'),
+    gallery: [
+      unsplash('photo-1497366216548-37526070297c'),
+      unsplash('photo-1497366811353-6870744d04b2'),
+      unsplash('photo-1524758631624-e2822e304c36'),
+    ],
+    valuation: 2500000,
+    totalTokens: 1000,
+    tokensSold: 640,
+    projectedYield: 8.4,
+    minTokens: 1,
+    area: 3200,
+    floors: 12,
+    yearBuilt: 2019,
+    occupancy: 92,
+    investors: 318,
+    summary:
+      'Edificio de oficinas convertido en coworking premium con 320 puestos, salas de reunión y auditorio. Contratos de membresía mensuales con alta rotación y ocupación superior al 90%.',
+    highlights: [
+      'Ocupación promedio del 92% en los últimos 24 meses',
+      'Operador con más de 8 años de experiencia en coworking',
+      'Ubicación en el distrito financiero con acceso a metro',
+      'Ingresos recurrentes por membresías y alquiler de salas',
+    ],
+    useOfFunds:
+      'Los tokens representan la propiedad del inmueble. Los ingresos por alquiler de espacios de coworking, descontados gastos operativos y de administración, se distribuyen trimestralmente entre los tenedores de tokens.',
+    documents: ['Avalúo comercial', 'Contrato de operación', 'Estados financieros 2024-2025'],
+    featured: true,
+  },
+  {
+    id: 'residencial-mirador-del-valle',
+    name: 'Residencial Mirador del Valle',
+    type: 'residential',
+    status: 'open',
+    city: 'Medellín',
+    country: 'Colombia',
+    address: 'El Poblado, Cra. 43A',
+    image: unsplash('photo-1560448204-e02f11c3d0e2'),
+    gallery: [
+      unsplash('photo-1560448204-e02f11c3d0e2'),
+      unsplash('photo-1502672260266-1c1ef2d93688'),
+      unsplash('photo-1484154218962-a197022b5858'),
+    ],
+    valuation: 1800000,
+    totalTokens: 1800,
+    tokensSold: 415,
+    projectedYield: 7.1,
+    minTokens: 5,
+    area: 4100,
+    floors: 8,
+    yearBuilt: 2021,
+    occupancy: 96,
+    investors: 204,
+    summary:
+      'Conjunto de 24 apartamentos amoblados destinados a renta de mediana y larga estancia para profesionales y nómadas digitales.',
+    highlights: [
+      '24 unidades amobladas de 1 y 2 habitaciones',
+      'Contratos de 6 a 12 meses con renovación del 78%',
+      'Administración profesional incluida',
+      'Zona de alta demanda con plusvalía anual del 6%',
+    ],
+    useOfFunds:
+      'Los ingresos netos por arrendamiento de las unidades se reparten mensualmente entre los inversores según su porcentaje de tokens.',
+    documents: ['Avalúo comercial', 'Reglamento de propiedad horizontal', 'Proyección de flujo de caja'],
+    featured: true,
+  },
+  {
+    id: 'plaza-comercial-costa-azul',
+    name: 'Plaza Comercial Costa Azul',
+    type: 'commercial',
+    status: 'almostFunded',
+    city: 'Cancún',
+    country: 'México',
+    address: 'Blvd. Kukulcán km 9',
+    image: unsplash('photo-1441986300917-64674bd600d8'),
+    gallery: [
+      unsplash('photo-1441986300917-64674bd600d8'),
+      unsplash('photo-1555529669-e69e7aa0ba9a'),
+      unsplash('photo-1567449303078-57ad995bd17a'),
+    ],
+    valuation: 4200000,
+    totalTokens: 2000,
+    tokensSold: 1870,
+    projectedYield: 9.2,
+    minTokens: 2,
+    area: 6800,
+    floors: 2,
+    yearBuilt: 2017,
+    occupancy: 100,
+    investors: 742,
+    summary:
+      'Centro comercial abierto con 18 locales arrendados a marcas ancla de gastronomía y retail en la zona hotelera.',
+    highlights: [
+      '100% de locales arrendados con contratos a 5 años',
+      'Ingresos indexados a inflación',
+      'Flujo peatonal de más de 12.000 personas diarias',
+      'Mantenimiento cubierto por cuotas de los locatarios',
+    ],
+    useOfFunds:
+      'Las rentas comerciales se distribuyen trimestralmente. Un 5% se reserva para fondo de mantenimiento y mejoras.',
+    documents: ['Avalúo comercial', 'Contratos de arrendamiento', 'Póliza de seguro'],
+    featured: true,
+  },
+  {
+    id: 'hotel-boutique-la-cumbre',
+    name: 'Hotel Boutique La Cumbre',
+    type: 'hotel',
+    status: 'open',
+    city: 'Cusco',
+    country: 'Perú',
+    address: 'Barrio de San Blas',
+    image: unsplash('photo-1566073771259-6a8506099945'),
+    gallery: [
+      unsplash('photo-1566073771259-6a8506099945'),
+      unsplash('photo-1571896349842-33c89424de2d'),
+      unsplash('photo-1582719508461-905c673771fd'),
+    ],
+    valuation: 3100000,
+    totalTokens: 1550,
+    tokensSold: 230,
+    projectedYield: 10.5,
+    minTokens: 3,
+    area: 2900,
+    floors: 4,
+    yearBuilt: 2015,
+    occupancy: 81,
+    investors: 96,
+    summary:
+      'Hotel boutique de 32 habitaciones con restaurante y spa, operado por una cadena regional con contrato de gestión a 10 años.',
+    highlights: [
+      'Ocupación promedio del 81% con tarifa media de USD 145',
+      'Contrato de gestión con rendimiento mínimo garantizado',
+      'Destino turístico de demanda internacional constante',
+      'Renovación integral completada en 2023',
+    ],
+    useOfFunds:
+      'El operador transfiere trimestralmente la utilidad neta del hotel, que se distribuye a los tenedores de tokens de forma proporcional.',
+    documents: ['Avalúo comercial', 'Contrato de gestión hotelera', 'Reporte de ocupación'],
+    featured: false,
+  },
+  {
+    id: 'centro-logistico-norte',
+    name: 'Centro Logístico Norte',
+    type: 'logistics',
+    status: 'funded',
+    city: 'Santiago',
+    country: 'Chile',
+    address: 'Ruta 5 Norte, Quilicura',
+    image: unsplash('photo-1586528116311-ad8dd3c8310d'),
+    gallery: [
+      unsplash('photo-1586528116311-ad8dd3c8310d'),
+      unsplash('photo-1553413077-190dd305871c'),
+      unsplash('photo-1601598851547-4302969d0614'),
+    ],
+    valuation: 5600000,
+    totalTokens: 2800,
+    tokensSold: 2800,
+    projectedYield: 7.8,
+    minTokens: 1,
+    area: 14500,
+    floors: 1,
+    yearBuilt: 2020,
+    occupancy: 100,
+    investors: 1120,
+    summary:
+      'Nave logística de 14.500 m² arrendada a un operador de e-commerce con contrato triple neto a 8 años.',
+    highlights: [
+      'Contrato triple neto: el inquilino cubre impuestos, seguro y mantenimiento',
+      'Inquilino con calificación crediticia AA',
+      'Acceso directo a autopista y aeropuerto',
+      'Financiación completada en 41 días',
+    ],
+    useOfFunds:
+      'Renta fija mensual transferida íntegramente a los inversores tras deducir la comisión de administración de la plataforma.',
+    documents: ['Avalúo comercial', 'Contrato de arrendamiento', 'Certificado de dominio'],
+    featured: false,
+  },
+  {
+    id: 'lofts-creativos-palermo',
+    name: 'Lofts Creativos Palermo',
+    type: 'residential',
+    status: 'comingSoon',
+    city: 'Buenos Aires',
+    country: 'Argentina',
+    address: 'Palermo Soho',
+    image: unsplash('photo-1502672023488-70e25813eb80'),
+    gallery: [
+      unsplash('photo-1502672023488-70e25813eb80'),
+      unsplash('photo-1536376072261-38c75010e6c9'),
+      unsplash('photo-1493809842364-78817add7ffb'),
+    ],
+    valuation: 1250000,
+    totalTokens: 1250,
+    tokensSold: 0,
+    projectedYield: 8.9,
+    minTokens: 5,
+    area: 1800,
+    floors: 5,
+    yearBuilt: 2024,
+    occupancy: 0,
+    investors: 0,
+    summary:
+      'Edificio de 14 lofts de diseño para renta corta a través de plataformas turísticas, en el corazón del barrio más visitado de la ciudad.',
+    highlights: [
+      'Obra nueva entregada en 2024',
+      'Gestión de renta corta a cargo de operador especializado',
+      'Barrio con la tarifa promedio más alta de la ciudad',
+      'Apertura de financiamiento estimada para el próximo trimestre',
+    ],
+    useOfFunds:
+      'Los ingresos por renta corta, netos de comisiones de plataforma y limpieza, se distribuirán mensualmente entre los tenedores de tokens.',
+    documents: ['Avalúo preliminar', 'Plan de negocio'],
+    featured: false,
+  },
+];
+
+export const getPropertyById = (id) => properties.find((p) => p.id === id);
+
+export const getFeaturedProperties = () => properties.filter((p) => p.featured);

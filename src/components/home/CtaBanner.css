@@ -1,0 +1,47 @@
+.pt-cta {
+  padding-block: 32px 64px;
+}
+
+.pt-cta__box {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 32px;
+  border-radius: var(--md-sys-shape-corner-extra-large);
+  background:
+    radial-gradient(80% 120% at 100% 100%, color-mix(in srgb, var(--md-sys-color-primary-container) 30%, transparent), transparent 60%),
+    var(--md-sys-color-primary);
+  color: var(--md-sys-color-on-primary);
+}
+
+@media (min-width: 840px) {
+  .pt-cta__box {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 48px;
+  }
+}
+
+.pt-cta__text {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 600px;
+}
+
+.pt-cta__text p {
+  opacity: 0.9;
+}
+
+.pt-cta__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.pt-cta__secondary {
+  --_fg: var(--md-sys-color-on-primary);
+  --_state: var(--md-sys-color-on-primary);
+}

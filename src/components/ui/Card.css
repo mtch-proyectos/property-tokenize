@@ -1,0 +1,82 @@
+.md-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--md-sys-shape-corner-medium);
+  overflow: hidden;
+  color: var(--md-sys-color-on-surface);
+  transition:
+    box-shadow var(--md-sys-motion-duration-medium) var(--md-sys-motion-easing-standard),
+    transform var(--md-sys-motion-duration-medium) var(--md-sys-motion-easing-standard);
+}
+
+.md-card--elevated {
+  background: var(--md-sys-color-surface-container-low);
+  box-shadow: var(--md-sys-elevation-1);
+}
+
+.md-card--filled {
+  background: var(--md-sys-color-surface-container-highest);
+}
+
+.md-card--outlined {
+  background: var(--md-sys-color-surface);
+  border: 1px solid var(--md-sys-color-outline-variant);
+}
+
+.md-card--interactive {
+  cursor: pointer;
+}
+
+.md-card__state {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: var(--md-sys-color-on-surface);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--md-sys-motion-duration-short) var(--md-sys-motion-easing-standard);
+}
+
+.md-card--interactive:hover .md-card__state { opacity: var(--md-sys-state-hover-opacity); }
+.md-card--interactive:focus-visible .md-card__state { opacity: var(--md-sys-state-focus-opacity); }
+.md-card--interactive:active .md-card__state { opacity: var(--md-sys-state-pressed-opacity); }
+
+.md-card--elevated.md-card--interactive:hover {
+  box-shadow: var(--md-sys-elevation-2);
+}
+
+.md-card__media {
+  position: relative;
+  width: 100%;
+  background:
+    linear-gradient(135deg, var(--md-sys-color-primary-container), var(--md-sys-color-tertiary-container));
+  overflow: hidden;
+}
+
+.md-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--md-sys-motion-duration-long) var(--md-sys-motion-easing-emphasized);
+}
+
+.md-card--interactive:hover .md-card__media img {
+  transform: scale(1.04);
+}
+
+.md-card__content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px;
+  flex: 1;
+}
+
+.md-card__actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  padding: 8px 16px 16px;
+}

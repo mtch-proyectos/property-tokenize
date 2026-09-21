@@ -1,0 +1,156 @@
+/* ---------- Base ---------- */
+.md-button {
+  --_bg: transparent;
+  --_fg: var(--md-sys-color-primary);
+  --_state: var(--md-sys-color-primary);
+  --_shadow: none;
+  --_shadow-hover: none;
+
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 40px;
+  padding: 0 24px;
+  border: none;
+  border-radius: var(--md-sys-shape-corner-full);
+  background: var(--_bg);
+  color: var(--_fg);
+  font: var(--md-sys-typescale-label-large);
+  letter-spacing: 0.1px;
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+  overflow: hidden;
+  box-shadow: var(--_shadow);
+  transition:
+    box-shadow var(--md-sys-motion-duration-short) var(--md-sys-motion-easing-standard),
+    background-color var(--md-sys-motion-duration-short) var(--md-sys-motion-easing-standard);
+}
+
+.md-button--with-icon {
+  padding-inline-start: 16px;
+}
+
+.md-button--full {
+  width: 100%;
+}
+
+.md-button__state {
+  position: absolute;
+  inset: 0;
+  background: var(--_state);
+  opacity: 0;
+  transition: opacity var(--md-sys-motion-duration-short) var(--md-sys-motion-easing-standard);
+  pointer-events: none;
+}
+
+.md-button:hover .md-button__state { opacity: var(--md-sys-state-hover-opacity); }
+.md-button:hover { box-shadow: var(--_shadow-hover); }
+.md-button:focus-visible .md-button__state { opacity: var(--md-sys-state-focus-opacity); }
+.md-button:active .md-button__state { opacity: var(--md-sys-state-pressed-opacity); }
+
+.md-button:disabled,
+.md-button[aria-disabled='true'] {
+  pointer-events: none;
+  background: color-mix(in srgb, var(--md-sys-color-on-surface) 12%, transparent);
+  color: color-mix(in srgb, var(--md-sys-color-on-surface) 38%, transparent);
+  box-shadow: none;
+}
+
+.md-button__label,
+.md-button__icon {
+  position: relative;
+  z-index: 1;
+}
+
+/* ---------- Variantes ---------- */
+.md-button--filled {
+  --_bg: var(--md-sys-color-primary);
+  --_fg: var(--md-sys-color-on-primary);
+  --_state: var(--md-sys-color-on-primary);
+  --_shadow-hover: var(--md-sys-elevation-1);
+}
+
+.md-button--tonal {
+  --_bg: var(--md-sys-color-secondary-container);
+  --_fg: var(--md-sys-color-on-secondary-container);
+  --_state: var(--md-sys-color-on-secondary-container);
+  --_shadow-hover: var(--md-sys-elevation-1);
+}
+
+.md-button--outlined {
+  --_bg: transparent;
+  --_fg: var(--md-sys-color-primary);
+  --_state: var(--md-sys-color-primary);
+  border: 1px solid var(--md-sys-color-outline);
+}
+
+.md-button--text {
+  --_bg: transparent;
+  --_fg: var(--md-sys-color-primary);
+  --_state: var(--md-sys-color-primary);
+  padding: 0 12px;
+}
+
+.md-button--elevated {
+  --_bg: var(--md-sys-color-surface-container-low);
+  --_fg: var(--md-sys-color-primary);
+  --_state: var(--md-sys-color-primary);
+  --_shadow: var(--md-sys-elevation-1);
+  --_shadow-hover: var(--md-sys-elevation-2);
+}
+
+/* Botón sobre fondo primario (para hero / CTA oscuros) */
+.md-button--inverse {
+  --_bg: var(--md-sys-color-primary-container);
+  --_fg: var(--md-sys-color-on-primary-container);
+  --_state: var(--md-sys-color-on-primary-container);
+}
+
+/* ---------- FAB ---------- */
+.md-button--fab {
+  --_bg: var(--md-sys-color-primary-container);
+  --_fg: var(--md-sys-color-on-primary-container);
+  --_state: var(--md-sys-color-on-primary-container);
+  --_shadow: var(--md-sys-elevation-3);
+  --_shadow-hover: var(--md-sys-elevation-4);
+  height: 56px;
+  padding: 0 20px;
+  border-radius: var(--md-sys-shape-corner-large);
+}
+
+/* ---------- Icon button ---------- */
+.md-icon-button {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border-radius: var(--md-sys-shape-corner-full);
+  --_fg: var(--md-sys-color-on-surface-variant);
+  --_state: var(--md-sys-color-on-surface-variant);
+}
+
+.md-icon-button.md-button--standard {
+  --_bg: transparent;
+}
+
+.md-icon-button.md-button--filled {
+  --_bg: var(--md-sys-color-primary);
+  --_fg: var(--md-sys-color-on-primary);
+  --_state: var(--md-sys-color-on-primary);
+}
+
+.md-icon-button.md-button--tonal {
+  --_bg: var(--md-sys-color-secondary-container);
+  --_fg: var(--md-sys-color-on-secondary-container);
+  --_state: var(--md-sys-color-on-secondary-container);
+}
+
+.md-icon-button.md-button--outlined {
+  border: 1px solid var(--md-sys-color-outline);
+}
+
+.md-icon-button .md-button__label {
+  display: inline-flex;
+}

@@ -1,0 +1,57 @@
+.pt-example {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 860px;
+}
+
+.pt-example__step {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  background: var(--md-sys-color-surface-container-lowest);
+  border-radius: var(--md-sys-shape-corner-large);
+}
+
+.pt-example__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+  border-radius: var(--md-sys-shape-corner-full);
+  background: var(--md-sys-color-primary-container);
+  color: var(--md-sys-color-on-primary-container);
+}
+
+.pt-example__body {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.pt-example__body strong {
+  color: var(--md-sys-color-primary);
+  font-weight: 600;
+}
+
+.pt-example__formula {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  max-width: 860px;
+  margin-top: 24px;
+  padding: 16px 20px;
+  border: 1px solid var(--md-sys-color-outline-variant);
+  border-radius: var(--md-sys-shape-corner-large);
+  background: var(--md-sys-color-surface);
+}
+
+.pt-example__formula strong {
+  color: var(--md-sys-color-primary);
+}
+
+.pt-example__calculator {
+  max-width: 640px;
+}

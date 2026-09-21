@@ -1,0 +1,68 @@
+.pt-about__mission {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  align-items: center;
+}
+
+@media (min-width: 840px) {
+  .pt-about__mission {
+    grid-template-columns: 1.4fr 1fr;
+    gap: 64px;
+  }
+}
+
+.pt-about__mission-text {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.pt-about__mission-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1;
+  max-width: 360px;
+  margin-inline: auto;
+  width: 100%;
+  border-radius: var(--md-sys-shape-corner-extra-large);
+  background:
+    radial-gradient(circle at 30% 30%, var(--md-sys-color-primary-container), transparent 60%),
+    var(--md-sys-color-tertiary-container);
+  color: var(--md-sys-color-primary);
+}
+
+.pt-team {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+@media (min-width: 840px) {
+  .pt-team {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.pt-team__card {
+  height: 100%;
+  text-align: center;
+}
+
+.pt-team__card .md-card__content {
+  align-items: center;
+  padding: 24px 16px;
+}
+
+.pt-team__avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  margin-bottom: 8px;
+  border-radius: 50%;
+  background: var(--md-sys-color-secondary-container);
+  color: var(--md-sys-color-on-secondary-container);
+}

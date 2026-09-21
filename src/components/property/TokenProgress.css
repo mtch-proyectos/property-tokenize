@@ -1,0 +1,16 @@
+.pt-token-progress {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.pt-token-progress__row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.pt-token-progress--compact {
+  gap: 6px;
+}

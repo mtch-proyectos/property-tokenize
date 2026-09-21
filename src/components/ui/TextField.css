@@ -1,0 +1,161 @@
+.md-textfield {
+  --_outline: var(--md-sys-color-outline);
+  --_label: var(--md-sys-color-on-surface-variant);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+}
+
+.md-textfield__container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 56px;
+  padding: 0 16px;
+  border-radius: var(--md-sys-shape-corner-extra-small);
+  background: transparent;
+}
+
+.md-textfield--multiline .md-textfield__container {
+  align-items: flex-start;
+  padding-block: 16px;
+}
+
+.md-textfield__leading {
+  color: var(--md-sys-color-on-surface-variant);
+  margin-inline-end: 16px;
+}
+
+.md-textfield__affix {
+  color: var(--md-sys-color-on-surface-variant);
+  font: var(--md-sys-typescale-body-large);
+  opacity: 0;
+  transition: opacity var(--md-sys-motion-duration-short);
+}
+
+.md-textfield--populated .md-textfield__affix,
+.md-textfield__container:focus-within .md-textfield__affix {
+  opacity: 1;
+}
+
+.md-textfield__input {
+  flex: 1;
+  min-width: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: var(--md-sys-color-on-surface);
+  font: var(--md-sys-typescale-body-large);
+  caret-color: var(--md-sys-color-primary);
+  resize: vertical;
+}
+
+.md-textfield__input::-webkit-outer-spin-button,
+.md-textfield__input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+.md-textfield__input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+.md-textfield__label {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--_label);
+  font: var(--md-sys-typescale-body-large);
+  pointer-events: none;
+  transition:
+    transform var(--md-sys-motion-duration-short) var(--md-sys-motion-easing-standard),
+    font-size var(--md-sys-motion-duration-short) var(--md-sys-motion-easing-standard),
+    top var(--md-sys-motion-duration-short) var(--md-sys-motion-easing-standard),
+    color var(--md-sys-motion-duration-short);
+}
+
+.md-textfield--with-icon .md-textfield__label {
+  left: 56px;
+}
+
+.md-textfield--multiline .md-textfield__label {
+  top: 28px;
+}
+
+.md-textfield__outline {
+  position: absolute;
+  inset: -6px 0 0 0;
+  margin: 0;
+  padding: 0 12px;
+  border: 1px solid var(--_outline);
+  border-radius: var(--md-sys-shape-corner-extra-small);
+  pointer-events: none;
+  transition: border-color var(--md-sys-motion-duration-short);
+}
+
+.md-textfield__legend {
+  padding: 0;
+  margin-inline-start: 0;
+  font: var(--md-sys-typescale-body-small);
+  max-width: 0.01px;
+  visibility: hidden;
+  white-space: nowrap;
+  transition: max-width var(--md-sys-motion-duration-short) var(--md-sys-motion-easing-standard);
+}
+
+.md-textfield--with-icon .md-textfield__legend {
+  margin-inline-start: 40px;
+}
+
+.md-textfield__legend span {
+  padding: 0 4px;
+}
+
+/* Estado flotante: enfocado o con valor */
+.md-textfield__container:focus-within .md-textfield__label,
+.md-textfield--populated .md-textfield__label,
+.md-textfield__input:not(:placeholder-shown) ~ .md-textfield__label {
+  top: 0;
+  left: 16px;
+  transform: translateY(-50%);
+  font: var(--md-sys-typescale-body-small);
+}
+
+.md-textfield__container:focus-within .md-textfield__legend,
+.md-textfield--populated .md-textfield__legend,
+.md-textfield__input:not(:placeholder-shown) ~ .md-textfield__outline .md-textfield__legend {
+  max-width: 100%;
+}
+
+.md-textfield__container:focus-within {
+  --_outline: var(--md-sys-color-primary);
+  --_label: var(--md-sys-color-primary);
+}
+
+.md-textfield__container:focus-within .md-textfield__outline {
+  border-width: 2px;
+}
+
+.md-textfield__container:hover:not(:focus-within) {
+  --_outline: var(--md-sys-color-on-surface);
+}
+
+.md-textfield__support {
+  padding: 0 16px;
+  color: var(--md-sys-color-on-surface-variant);
+  font: var(--md-sys-typescale-body-small);
+}
+
+/* Error */
+.md-textfield--error {
+  --_outline: var(--md-sys-color-error);
+  --_label: var(--md-sys-color-error);
+}
+.md-textfield--error .md-textfield__container:focus-within {
+  --_outline: var(--md-sys-color-error);
+  --_label: var(--md-sys-color-error);
+}
+.md-textfield--error .md-textfield__support {
+  color: var(--md-sys-color-error);
+}

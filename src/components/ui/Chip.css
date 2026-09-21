@@ -1,0 +1,99 @@
+.md-chip {
+  --_bg: transparent;
+  --_fg: var(--md-sys-color-on-surface-variant);
+  --_border: var(--md-sys-color-outline);
+
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 32px;
+  padding: 0 16px;
+  border: 1px solid var(--_border);
+  border-radius: var(--md-sys-shape-corner-small);
+  background: var(--_bg);
+  color: var(--_fg);
+  font: var(--md-sys-typescale-label-large);
+  letter-spacing: 0.1px;
+  white-space: nowrap;
+  overflow: hidden;
+  cursor: default;
+  transition:
+    background-color var(--md-sys-motion-duration-short) var(--md-sys-motion-easing-standard),
+    border-color var(--md-sys-motion-duration-short) var(--md-sys-motion-easing-standard);
+}
+
+button.md-chip {
+  cursor: pointer;
+}
+
+.md-chip__state {
+  position: absolute;
+  inset: 0;
+  background: var(--_fg);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--md-sys-motion-duration-short) var(--md-sys-motion-easing-standard);
+}
+
+button.md-chip:hover .md-chip__state { opacity: var(--md-sys-state-hover-opacity); }
+button.md-chip:focus-visible .md-chip__state { opacity: var(--md-sys-state-focus-opacity); }
+button.md-chip:active .md-chip__state { opacity: var(--md-sys-state-pressed-opacity); }
+
+.md-chip__icon,
+.md-chip__label {
+  position: relative;
+  z-index: 1;
+}
+
+.md-chip__icon {
+  margin-inline-start: -8px;
+  color: var(--md-sys-color-primary);
+}
+
+.md-chip--selected {
+  --_bg: var(--md-sys-color-secondary-container);
+  --_fg: var(--md-sys-color-on-secondary-container);
+  --_border: transparent;
+}
+
+.md-chip--selected .md-chip__icon {
+  color: var(--md-sys-color-on-secondary-container);
+}
+
+/* Chips informativos con tono */
+.md-chip--tone-primary {
+  --_bg: var(--md-sys-color-primary-container);
+  --_fg: var(--md-sys-color-on-primary-container);
+  --_border: transparent;
+}
+.md-chip--tone-secondary {
+  --_bg: var(--md-sys-color-secondary-container);
+  --_fg: var(--md-sys-color-on-secondary-container);
+  --_border: transparent;
+}
+.md-chip--tone-tertiary {
+  --_bg: var(--md-sys-color-tertiary-container);
+  --_fg: var(--md-sys-color-on-tertiary-container);
+  --_border: transparent;
+}
+.md-chip--tone-error {
+  --_bg: var(--md-sys-color-error-container);
+  --_fg: var(--md-sys-color-on-error-container);
+  --_border: transparent;
+}
+.md-chip--tone-outline {
+  --_bg: var(--md-sys-color-surface-container-high);
+  --_fg: var(--md-sys-color-on-surface-variant);
+  --_border: transparent;
+}
+
+.md-chip[class*='md-chip--tone-'] .md-chip__icon {
+  color: inherit;
+}
+
+.md-chip--small {
+  height: 24px;
+  padding: 0 10px;
+  font: var(--md-sys-typescale-label-medium);
+}

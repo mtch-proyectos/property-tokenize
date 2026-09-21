@@ -1,0 +1,24 @@
+.pt-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--md-sys-color-primary);
+  border-radius: var(--md-sys-shape-corner-small);
+}
+
+.pt-logo__mark {
+  width: 36px;
+  height: 36px;
+}
+
+.pt-logo__text {
+  font: var(--md-sys-typescale-title-large);
+  font-weight: 400;
+  color: var(--md-sys-color-on-surface);
+  letter-spacing: -0.2px;
+}
+
+.pt-logo__text strong {
+  font-weight: 700;
+  color: var(--md-sys-color-primary);
+}

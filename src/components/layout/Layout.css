@@ -1,0 +1,36 @@
+.pt-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+}
+
+.pt-layout__main {
+  flex: 1;
+}
+
+/* Cabecera simple de página interna */
+.pt-page-header {
+  padding-block: 40px 8px;
+}
+
+@media (min-width: 840px) {
+  .pt-page-header {
+    padding-block: 64px 16px;
+  }
+}
+
+.pt-page-header__title {
+  color: var(--md-sys-color-on-surface);
+}
+
+.pt-page-header__subtitle {
+  margin-top: 12px;
+  max-width: 680px;
+  color: var(--md-sys-color-on-surface-variant);
+}
+
+@media (min-width: 840px) {
+  .pt-page-header__title {
+    font: var(--md-sys-typescale-display-small);
+  }
+}

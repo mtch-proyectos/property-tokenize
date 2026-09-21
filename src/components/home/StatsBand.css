@@ -1,0 +1,32 @@
+.pt-stats {
+  background: var(--md-sys-color-primary);
+  color: var(--md-sys-color-on-primary);
+  padding-block: 32px;
+}
+
+.pt-stats__list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px 16px;
+}
+
+@media (min-width: 840px) {
+  .pt-stats__list {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.pt-stats__item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  text-align: center;
+}
+
+.pt-stats__value {
+  font-weight: 500;
+}
+
+.pt-stats__label {
+  opacity: 0.85;
+}
